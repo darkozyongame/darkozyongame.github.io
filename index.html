@@ -177,11 +177,11 @@
         <p><strong>Web:</strong> darkozyongame.com</p>
       </div>
       <form id="contact-form">
-        <input name="name" type="text" autocomplete="name" required placeholder="Name / Ad Soyad *">
-        <input name="email" type="email" autocomplete="email" required placeholder="E-mail / E-posta *">
-        <input name="phone" type="tel" autocomplete="tel" placeholder="Phone (optional) / Telefon (isteğe bağlı)">
-        <input name="subject" type="text" placeholder="Subject / Konu">
-        <textarea name="message" required placeholder="Message / Mesaj *"></textarea>
+        <input name="name" type="text" autocomplete="name" required minlength="2" maxlength="80" placeholder="Name / Ad Soyad *">
+        <input name="email" type="email" autocomplete="email" required maxlength="120" placeholder="E-mail / E-posta *">
+        <input name="phone" type="tel" autocomplete="tel" maxlength="25" pattern="[0-9+\(\)\s\-]{7,25}" placeholder="Phone (optional) / Telefon (isteğe bağlı)">
+        <input name="subject" type="text" maxlength="120" placeholder="Subject / Konu">
+        <textarea name="message" required minlength="10" maxlength="3000" placeholder="Message / Mesaj *"></textarea>
         <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button class="btn btn-primary" type="submit"><span data-lang="en">Send</span><span data-lang="tr">Gönder</span></button>
         <p class="form-status" id="form-status" role="status"></p>
