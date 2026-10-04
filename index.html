@@ -4,126 +4,207 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DarKozyon Game</title>
-<meta name="description" content="DarKozyon Game — independent mobile games. Washi Block Puzzle: a calm, paper-themed block puzzle.">
-<link rel="icon" href="assets/icon.png">
-<style>
-  :root {
-    --paper: #f3ebdd; --card: #fffaf0; --ink: #3b2f2a;
-    --coral: #e8735a; --indigo: #3f4a8a; --matcha: #8daa6b;
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--paper); color: var(--ink); line-height: 1.6; }
-  header { display: flex; align-items: center; justify-content: space-between; max-width: 960px; margin: 0 auto; padding: 20px 24px; }
-  .brand { font-weight: 700; font-size: 20px; color: var(--indigo); }
-  .lang button { border: 2px solid var(--indigo); background: transparent; color: var(--indigo); font-weight: 600; padding: 4px 12px; border-radius: 8px; cursor: pointer; }
-  .lang button.active { background: var(--indigo); color: #fff; }
-  main { max-width: 960px; margin: 0 auto; padding: 0 24px 48px; }
-  .hero { width: 100%; border-radius: 16px; display: block; box-shadow: 0 6px 20px rgba(59, 47, 42, 0.12); }
-  .game { display: flex; gap: 20px; align-items: center; margin-top: 32px; }
-  .game img { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 4px 12px rgba(59, 47, 42, 0.15); }
-  h1 { color: var(--indigo); margin: 0; font-size: 32px; }
-  h2 { color: var(--indigo); margin-top: 40px; }
-  .tagline { margin: 4px 0 0; opacity: 0.8; }
-  .badge { display: inline-block; margin-top: 10px; padding: 6px 14px; border-radius: 999px; background: var(--matcha); color: #fff; font-weight: 600; font-size: 14px; }
-  .card { background: var(--card); border-radius: 14px; padding: 20px 24px; margin-top: 16px; }
-  .card ul { margin: 0; padding-left: 20px; }
-  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
-  .shots img { width: 100%; border-radius: 14px; box-shadow: 0 4px 14px rgba(59, 47, 42, 0.12); }
-  a { color: var(--coral); font-weight: 600; }
-  footer { max-width: 960px; margin: 0 auto; padding: 24px; font-size: 14px; opacity: 0.7; border-top: 1px solid rgba(59, 47, 42, 0.15); }
-  [data-lang] { display: none; }
-  body.en [data-lang="en"], body.tr [data-lang="tr"] { display: revert; }
-  @media (max-width: 600px) {
-    .shots { grid-template-columns: 1fr 1fr; }
-    .shots img:last-child { display: none; }
-    h1 { font-size: 26px; }
-  }
-</style>
+<meta name="description" content="DarKozyon Game — independent mobile games and apps. Custom app development.">
+<link rel="icon" href="assets/darkozyon_logo.png">
+<link rel="stylesheet" href="style.css">
 </head>
 <body class="en">
-<header>
-  <div class="brand">DarKozyon Game</div>
-  <div class="lang">
-    <button id="btn-en" onclick="setLang('en')">EN</button>
-    <button id="btn-tr" onclick="setLang('tr')">TR</button>
-  </div>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav-brand" href="#top">
+      <img src="assets/darkozyon_logo.png" alt="DarKozyon Game logo">
+      <span class="brand-text">DarKozyon Game</span>
+    </a>
+    <div class="nav-links">
+      <a href="#games"><span data-lang="en">Games</span><span data-lang="tr">Oyunlar</span></a>
+      <a href="#apps"><span data-lang="en">Apps</span><span data-lang="tr">Uygulamalar</span></a>
+      <a href="#custom"><span data-lang="en">Custom Apps</span><span data-lang="tr">Özel Uygulamalar</span></a>
+      <a href="#about"><span data-lang="en">About</span><span data-lang="tr">Hakkımızda</span></a>
+      <a href="#contact"><span data-lang="en">Contact</span><span data-lang="tr">İletişim</span></a>
+    </div>
+    <div class="lang">
+      <button data-set="en">EN</button>
+      <button data-set="tr">TR</button>
+    </div>
+  </nav>
 </header>
 
-<main>
-  <img class="hero" data-lang="en" src="assets/feature_en.png" alt="Washi Block Puzzle">
-  <img class="hero" data-lang="tr" src="assets/feature_tr.png" alt="Washi Block Puzzle">
+<main id="top">
 
-  <section class="game">
-    <img src="assets/icon.png" alt="Washi Block Puzzle icon">
+  <section class="hero">
     <div>
-      <h1>Washi Block Puzzle</h1>
-      <p class="tagline" data-lang="en">A calm, paper-themed block puzzle.</p>
-      <p class="tagline" data-lang="tr">Sakin, kağıt temalı bir blok bulmaca.</p>
-      <span class="badge" data-lang="en">Coming soon to Google Play</span>
-      <span class="badge" data-lang="tr">Yakında Google Play'de</span>
+      <h1 data-lang="en">We build <span class="accent">games</span> and mobile apps.</h1>
+      <h1 data-lang="tr">Oyunlar ve <span class="accent">mobil uygulamalar</span> geliştiriyoruz.</h1>
+      <p data-lang="en">DarKozyon Game is an independent studio creating original mobile games and useful apps — and building custom apps for businesses.</p>
+      <p data-lang="tr">DarKozyon Game; özgün mobil oyunlar ve kullanışlı uygulamalar üreten, işletmeler için özel uygulamalar geliştiren bağımsız bir stüdyodur.</p>
+      <div class="buttons">
+        <a class="btn btn-primary" href="#games"><span data-lang="en">Our games</span><span data-lang="tr">Oyunlarımız</span></a>
+        <a class="btn btn-ghost" href="#contact"><span data-lang="en">Get in touch</span><span data-lang="tr">İletişime geç</span></a>
+      </div>
+    </div>
+    <div class="logo-stage">
+      <div class="logo-tilt">
+        <div class="logo-ring"></div>
+        <div class="logo-frame">
+          <img class="hero-logo" src="assets/darkozyon_logo.png" alt="DarKozyon Game">
+          <span class="logo-shine"></span>
+        </div>
+        <span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span>
+        <span class="spark s4"></span><span class="spark s5"></span><span class="spark s6"></span>
+        <span class="spark s7"></span><span class="spark s8"></span>
+      </div>
     </div>
   </section>
 
-  <div class="card">
-    <p data-lang="en">Place colorful paper pieces on a cozy origami desk, fill rows and columns, and watch them fold away. No timer, no rush — just a quiet moment to think. Works offline.</p>
-    <p data-lang="tr">Renkli kağıt parçalarını sıcak bir origami masasına yerleştir, satır ve sütunları doldur ve katlanarak silinmelerini izle. Süre yok, acele yok; sadece düşünmek için sakin bir an. İnternetsiz oynanır.</p>
-    <ul data-lang="en">
-      <li>Levels 1 to 100, then an endless Master mode</li>
-      <li>The board grows as you progress: 8x8, 10x10, 12x12</li>
-      <li>Undo up to your last 5 moves</li>
-      <li>Soft, original music · English and Turkish</li>
-    </ul>
-    <ul data-lang="tr">
-      <li>1'den 100'e kadar seviye, ardından sonsuz Master modu</li>
-      <li>İlerledikçe tahta büyür: 8x8, 10x10, 12x12</li>
-      <li>Son 5 hamleye kadar geri al</li>
-      <li>Yumuşak, özgün müzik · Türkçe ve İngilizce</li>
-    </ul>
-  </div>
+  <section id="games">
+    <h2 class="section-title"><span data-lang="en">Games</span><span data-lang="tr">Oyunlar</span></h2>
+    <p class="section-lead" data-lang="en">Calm, fair and original mobile games — no pay-to-win, no pushy ads.</p>
+    <p class="section-lead" data-lang="tr">Sakin, adil ve özgün mobil oyunlar — parayla kazanma yok, rahatsız edici reklam yok.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="card-head">
+          <img src="assets/icon.png" alt="Washi Block Puzzle">
+          <div>
+            <h3>Washi Block Puzzle</h3>
+            <span class="tag soon" data-lang="en">Coming soon to Google Play</span>
+            <span class="tag soon" data-lang="tr">Yakında Google Play'de</span>
+          </div>
+        </div>
+        <p data-lang="en">A calm, paper-themed block puzzle. Fill rows and columns on a cozy origami desk and watch them fold away. Works offline.</p>
+        <p data-lang="tr">Sakin, kağıt temalı bir blok bulmaca. Origami masasında satır ve sütunları doldur, katlanarak silinmelerini izle. İnternetsiz oynanır.</p>
+        <div class="card-links">
+          <a href="https://sites.google.com/view/washi-block-puzzle/ana-sayfa-home"><span data-lang="en">Game website</span><span data-lang="tr">Oyunun sitesi</span></a>
+          <a data-lang="en" href="https://sites.google.com/view/washi-block-puzzle/ana-sayfa-home/privacy-policy-en">Privacy Policy</a>
+          <a data-lang="tr" href="https://sites.google.com/view/washi-block-puzzle/ana-sayfa-home/gizlilik-politikasi-tr">Gizlilik Politikası</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-head">
+          <div class="placeholder">+</div>
+          <div>
+            <h3 data-lang="en">New games on the way</h3>
+            <h3 data-lang="tr">Yeni oyunlar yolda</h3>
+            <span class="tag">DarKozyon Game</span>
+          </div>
+        </div>
+        <p data-lang="en">We are working on our next titles. Follow this page for updates.</p>
+        <p data-lang="tr">Sıradaki oyunlarımız üzerinde çalışıyoruz. Gelişmeler için bu sayfayı takip edin.</p>
+      </article>
+    </div>
+  </section>
 
-  <div class="shots" data-lang="en">
-    <img src="assets/01_gameplay_en.png" alt="Gameplay">
-    <img src="assets/02_combo_en.png" alt="Combo">
-    <img src="assets/03_big_board_en.png" alt="12x12 board">
-  </div>
-  <div class="shots" data-lang="tr">
-    <img src="assets/01_gameplay_tr.png" alt="Oyun ekranı">
-    <img src="assets/02_combo_tr.png" alt="Combo">
-    <img src="assets/03_big_board_tr.png" alt="12x12 tahta">
-  </div>
+  <section id="apps">
+    <h2 class="section-title"><span data-lang="en">Apps</span><span data-lang="tr">Uygulamalar</span></h2>
+    <p class="section-lead" data-lang="en">Simple, privacy-friendly apps that make everyday tasks easier.</p>
+    <p class="section-lead" data-lang="tr">Günlük işleri kolaylaştıran, gizliliğe saygılı sade uygulamalar.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="card-head">
+          <div class="placeholder">+</div>
+          <div>
+            <h3 data-lang="en">Coming soon</h3>
+            <h3 data-lang="tr">Yakında</h3>
+            <span class="tag soon" data-lang="en">In development</span>
+            <span class="tag soon" data-lang="tr">Geliştiriliyor</span>
+          </div>
+        </div>
+        <p data-lang="en">Our first apps will be listed here.</p>
+        <p data-lang="tr">İlk uygulamalarımız burada yer alacak.</p>
+      </article>
+    </div>
+  </section>
 
-  <h2 data-lang="en">Privacy &amp; support</h2>
-  <h2 data-lang="tr">Gizlilik ve destek</h2>
-  <div class="card">
-    <p data-lang="en">
-      <a href="https://sites.google.com/view/washi-block-puzzle/ana-sayfa-home">Game website</a><br>
-      <a href="https://sites.google.com/view/washi-block-puzzle/ana-sayfa-home/privacy-policy-en">Privacy Policy</a><br>
-      Contact: <a href="mailto:teknik.destek.site@gmail.com">teknik.destek.site@gmail.com</a>
-    </p>
-    <p data-lang="tr">
-      <a href="https://sites.google.com/view/washi-block-puzzle/ana-sayfa-home">Oyunun web sitesi</a><br>
-      <a href="https://sites.google.com/view/washi-block-puzzle/ana-sayfa-home/gizlilik-politikasi-tr">Gizlilik Politikası</a><br>
-      İletişim: <a href="mailto:teknik.destek.site@gmail.com">teknik.destek.site@gmail.com</a>
-    </p>
-  </div>
+  <section id="custom">
+    <h2 class="section-title"><span data-lang="en">Custom Apps</span><span data-lang="tr">Özel Uygulamalar</span></h2>
+    <p class="section-lead" data-lang="en">Need a game or an app for your business, brand or event? We design and build it for you — from idea to store release.</p>
+    <p class="section-lead" data-lang="tr">İşletmeniz, markanız ya da etkinliğiniz için bir oyun veya uygulama mı lazım? Fikirden mağaza yayınına kadar sizin için tasarlayıp geliştiriyoruz.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="icon">◆</div>
+        <h3 data-lang="en">Mobile games</h3><h3 data-lang="tr">Mobil oyunlar</h3>
+        <p data-lang="en">Branded casual and puzzle games for promotion and engagement.</p>
+        <p data-lang="tr">Tanıtım ve etkileşim için markanıza özel casual ve bulmaca oyunları.</p>
+      </article>
+      <article class="card">
+        <div class="icon">▣</div>
+        <h3 data-lang="en">Android apps</h3><h3 data-lang="tr">Android uygulamalar</h3>
+        <p data-lang="en">Clean, fast apps built around your workflow.</p>
+        <p data-lang="tr">İş akışınıza göre tasarlanmış sade ve hızlı uygulamalar.</p>
+      </article>
+      <article class="card">
+        <div class="icon">⚙</div>
+        <h3 data-lang="en">Ads &amp; in-app purchases</h3><h3 data-lang="tr">Reklam ve uygulama içi satın alma</h3>
+        <p data-lang="en">AdMob and Google Play Billing integration, done the policy-safe way.</p>
+        <p data-lang="tr">AdMob ve Google Play Billing entegrasyonu, mağaza kurallarına uygun şekilde.</p>
+      </article>
+      <article class="card">
+        <div class="icon">▲</div>
+        <h3 data-lang="en">Store release</h3><h3 data-lang="tr">Mağaza yayını</h3>
+        <p data-lang="en">Store listing, privacy policy, data safety forms and testing support.</p>
+        <p data-lang="tr">Mağaza sayfası, gizlilik politikası, veri güvenliği formları ve test desteği.</p>
+      </article>
+    </div>
+    <div class="buttons" style="margin-top: 28px;">
+      <a class="btn btn-primary" href="#contact"><span data-lang="en">Request a quote</span><span data-lang="tr">Teklif isteyin</span></a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title"><span data-lang="en">About us</span><span data-lang="tr">Hakkımızda</span></h2>
+    <div class="about">
+      <div>
+        <p data-lang="en">DarKozyon Game is an independent game and app studio based in Türkiye. We design, code and publish our own titles, and we help businesses bring their ideas to mobile.</p>
+        <p data-lang="tr">DarKozyon Game, Türkiye merkezli bağımsız bir oyun ve uygulama stüdyosudur. Kendi oyunlarımızı tasarlıyor, kodluyor ve yayınlıyoruz; işletmelerin fikirlerini mobile taşımalarına da yardımcı oluyoruz.</p>
+        <p data-lang="en">We believe a good game respects the player: original art and sound, fair difficulty, honest prices and ads that never get in the way.</p>
+        <p data-lang="tr">İyi bir oyunun oyuncuya saygı duyduğuna inanıyoruz: özgün görsel ve ses, adil zorluk, dürüst fiyatlar ve oyunun önüne geçmeyen reklamlar.</p>
+      </div>
+      <ul class="values">
+        <li><span data-lang="en">Original — our own art, music and ideas</span><span data-lang="tr">Özgün — kendi görselimiz, müziğimiz ve fikirlerimiz</span></li>
+        <li><span data-lang="en">Fair — no pay-to-win</span><span data-lang="tr">Adil — parayla kazanma yok</span></li>
+        <li><span data-lang="en">Privacy-friendly — only what is needed</span><span data-lang="tr">Gizliliğe saygılı — yalnızca gerekeni</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title"><span data-lang="en">Contact</span><span data-lang="tr">İletişim</span></h2>
+    <div class="contact">
+      <div>
+        <p class="section-lead" data-lang="en">Questions, feedback or a project idea? Write to us — we get back to you within 3 business days.</p>
+        <p class="section-lead" data-lang="tr">Sorunuz, geri bildiriminiz ya da proje fikriniz mi var? Bize yazın — 3 iş günü içinde geri dönüyoruz.</p>
+        <p><strong>E-mail:</strong> <a href="mailto:destek@darkozyongame.com">destek@darkozyongame.com</a></p>
+        <p><strong>Web:</strong> darkozyongame.com</p>
+      </div>
+      <form id="contact-form">
+        <input name="name" type="text" autocomplete="name" required placeholder="Name / Ad Soyad *">
+        <input name="email" type="email" autocomplete="email" required placeholder="E-mail / E-posta *">
+        <input name="phone" type="tel" autocomplete="tel" placeholder="Phone (optional) / Telefon (isteğe bağlı)">
+        <input name="subject" type="text" placeholder="Subject / Konu">
+        <textarea name="message" required placeholder="Message / Mesaj *"></textarea>
+        <input type="text" name="_honey" class="honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-primary" type="submit"><span data-lang="en">Send</span><span data-lang="tr">Gönder</span></button>
+        <p class="form-status" id="form-status" role="status"></p>
+        <p class="note" data-lang="en">Your message is delivered to us by e-mail through FormSubmit. We use your details only to reply. See our <a href="privacy.html">Privacy Policy</a>.</p>
+        <p class="note" data-lang="tr">Mesajınız FormSubmit aracılığıyla bize e-posta olarak iletilir. Bilgilerinizi yalnızca size yanıt vermek için kullanırız. <a href="privacy.html">Gizlilik Politikası</a>.</p>
+      </form>
+    </div>
+  </section>
+
 </main>
 
-<footer>
-  <span data-lang="en">© DarKozyon Game · Independent mobile game developer</span>
-  <span data-lang="tr">© DarKozyon Game · Bağımsız mobil oyun geliştiricisi</span>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© <span id="year">2026</span> DarKozyon Game</span>
+    <div class="footer-links">
+      <a href="#games"><span data-lang="en">Games</span><span data-lang="tr">Oyunlar</span></a>
+      <a href="#about"><span data-lang="en">About</span><span data-lang="tr">Hakkımızda</span></a>
+      <a href="#contact"><span data-lang="en">Contact</span><span data-lang="tr">İletişim</span></a>
+      <a href="privacy.html"><span data-lang="en">Privacy Policy</span><span data-lang="tr">Gizlilik Politikası</span></a>
+    </div>
+  </div>
 </footer>
 
-<script>
-  function setLang(lang) {
-    document.body.className = lang;
-    document.documentElement.lang = lang;
-    document.getElementById("btn-en").classList.toggle("active", lang === "en");
-    document.getElementById("btn-tr").classList.toggle("active", lang === "tr");
-    try { localStorage.setItem("lang", lang); } catch (e) {}
-  }
-  var saved = null;
-  try { saved = localStorage.getItem("lang"); } catch (e) {}
-  setLang(saved || ((navigator.language || "").toLowerCase().startsWith("tr") ? "tr" : "en"));
-</script>
+<script src="main.js"></script>
 </body>
 </html>
