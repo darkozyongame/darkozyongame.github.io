@@ -4,36 +4,126 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DarKozyon Game</title>
+<meta name="description" content="DarKozyon Game — independent mobile games. Washi Block Puzzle: a calm, paper-themed block puzzle.">
+<link rel="icon" href="assets/icon.png">
 <style>
-  body { margin: 0; font-family: system-ui, sans-serif; background: #f3ebdd; color: #3b2f2a; }
-  main { max-width: 640px; margin: 0 auto; padding: 48px 24px; }
-  h1 { color: #3f4a8a; margin-bottom: 4px; }
-  h2 { color: #3f4a8a; margin-top: 36px; }
-  .card { background: #fffaf0; border-radius: 12px; padding: 20px 24px; margin-top: 16px; }
-  a { color: #e8735a; }
-  footer { margin-top: 48px; font-size: 14px; opacity: 0.7; }
+  :root {
+    --paper: #f3ebdd; --card: #fffaf0; --ink: #3b2f2a;
+    --coral: #e8735a; --indigo: #3f4a8a; --matcha: #8daa6b;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--paper); color: var(--ink); line-height: 1.6; }
+  header { display: flex; align-items: center; justify-content: space-between; max-width: 960px; margin: 0 auto; padding: 20px 24px; }
+  .brand { font-weight: 700; font-size: 20px; color: var(--indigo); }
+  .lang button { border: 2px solid var(--indigo); background: transparent; color: var(--indigo); font-weight: 600; padding: 4px 12px; border-radius: 8px; cursor: pointer; }
+  .lang button.active { background: var(--indigo); color: #fff; }
+  main { max-width: 960px; margin: 0 auto; padding: 0 24px 48px; }
+  .hero { width: 100%; border-radius: 16px; display: block; box-shadow: 0 6px 20px rgba(59, 47, 42, 0.12); }
+  .game { display: flex; gap: 20px; align-items: center; margin-top: 32px; }
+  .game img { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 4px 12px rgba(59, 47, 42, 0.15); }
+  h1 { color: var(--indigo); margin: 0; font-size: 32px; }
+  h2 { color: var(--indigo); margin-top: 40px; }
+  .tagline { margin: 4px 0 0; opacity: 0.8; }
+  .badge { display: inline-block; margin-top: 10px; padding: 6px 14px; border-radius: 999px; background: var(--matcha); color: #fff; font-weight: 600; font-size: 14px; }
+  .card { background: var(--card); border-radius: 14px; padding: 20px 24px; margin-top: 16px; }
+  .card ul { margin: 0; padding-left: 20px; }
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+  .shots img { width: 100%; border-radius: 14px; box-shadow: 0 4px 14px rgba(59, 47, 42, 0.12); }
+  a { color: var(--coral); font-weight: 600; }
+  footer { max-width: 960px; margin: 0 auto; padding: 24px; font-size: 14px; opacity: 0.7; border-top: 1px solid rgba(59, 47, 42, 0.15); }
+  [data-lang] { display: none; }
+  body.en [data-lang="en"], body.tr [data-lang="tr"] { display: revert; }
+  @media (max-width: 600px) {
+    .shots { grid-template-columns: 1fr 1fr; }
+    .shots img:last-child { display: none; }
+    h1 { font-size: 26px; }
+  }
 </style>
 </head>
-<body>
-<main>
-  <h1>DarKozyon Game</h1>
-  <p>Independent mobile game developer · Bağımsız mobil oyun geliştiricisi</p>
+<body class="en">
+<header>
+  <div class="brand">DarKozyon Game</div>
+  <div class="lang">
+    <button id="btn-en" onclick="setLang('en')">EN</button>
+    <button id="btn-tr" onclick="setLang('tr')">TR</button>
+  </div>
+</header>
 
-  <h2>Games · Oyunlar</h2>
+<main>
+  <img class="hero" data-lang="en" src="assets/feature_en.png" alt="Washi Block Puzzle">
+  <img class="hero" data-lang="tr" src="assets/feature_tr.png" alt="Washi Block Puzzle">
+
+  <section class="game">
+    <img src="assets/icon.png" alt="Washi Block Puzzle icon">
+    <div>
+      <h1>Washi Block Puzzle</h1>
+      <p class="tagline" data-lang="en">A calm, paper-themed block puzzle.</p>
+      <p class="tagline" data-lang="tr">Sakin, kağıt temalı bir blok bulmaca.</p>
+      <span class="badge" data-lang="en">Coming soon to Google Play</span>
+      <span class="badge" data-lang="tr">Yakında Google Play'de</span>
+    </div>
+  </section>
+
   <div class="card">
-    <h3>Washi Block Puzzle</h3>
-    <p>A calm, paper-themed block puzzle.<br>Sakin, kağıt temalı bir blok bulmaca.</p>
-    <p>
-      <a href="https://sites.google.com/view/washi-block-puzzle/ana-sayfa-home">Website · Web sitesi</a><br>
-      <a href="https://sites.google.com/view/washi-block-puzzle/ana-sayfa-home/privacy-policy-en">Privacy Policy (EN)</a><br>
-      <a href="https://sites.google.com/view/washi-block-puzzle/ana-sayfa-home/gizlilik-politikasi-tr">Gizlilik Politikası (TR)</a>
-    </p>
+    <p data-lang="en">Place colorful paper pieces on a cozy origami desk, fill rows and columns, and watch them fold away. No timer, no rush — just a quiet moment to think. Works offline.</p>
+    <p data-lang="tr">Renkli kağıt parçalarını sıcak bir origami masasına yerleştir, satır ve sütunları doldur ve katlanarak silinmelerini izle. Süre yok, acele yok; sadece düşünmek için sakin bir an. İnternetsiz oynanır.</p>
+    <ul data-lang="en">
+      <li>Levels 1 to 100, then an endless Master mode</li>
+      <li>The board grows as you progress: 8x8, 10x10, 12x12</li>
+      <li>Undo up to your last 5 moves</li>
+      <li>Soft, original music · English and Turkish</li>
+    </ul>
+    <ul data-lang="tr">
+      <li>1'den 100'e kadar seviye, ardından sonsuz Master modu</li>
+      <li>İlerledikçe tahta büyür: 8x8, 10x10, 12x12</li>
+      <li>Son 5 hamleye kadar geri al</li>
+      <li>Yumuşak, özgün müzik · Türkçe ve İngilizce</li>
+    </ul>
   </div>
 
-  <h2>Contact · İletişim</h2>
-  <p><a href="mailto:teknik.destek.site@gmail.com">teknik.destek.site@gmail.com</a></p>
+  <div class="shots" data-lang="en">
+    <img src="assets/01_gameplay_en.png" alt="Gameplay">
+    <img src="assets/02_combo_en.png" alt="Combo">
+    <img src="assets/03_big_board_en.png" alt="12x12 board">
+  </div>
+  <div class="shots" data-lang="tr">
+    <img src="assets/01_gameplay_tr.png" alt="Oyun ekranı">
+    <img src="assets/02_combo_tr.png" alt="Combo">
+    <img src="assets/03_big_board_tr.png" alt="12x12 tahta">
+  </div>
 
-  <footer>© DarKozyon Game</footer>
+  <h2 data-lang="en">Privacy &amp; support</h2>
+  <h2 data-lang="tr">Gizlilik ve destek</h2>
+  <div class="card">
+    <p data-lang="en">
+      <a href="https://sites.google.com/view/washi-block-puzzle/ana-sayfa-home">Game website</a><br>
+      <a href="https://sites.google.com/view/washi-block-puzzle/ana-sayfa-home/privacy-policy-en">Privacy Policy</a><br>
+      Contact: <a href="mailto:teknik.destek.site@gmail.com">teknik.destek.site@gmail.com</a>
+    </p>
+    <p data-lang="tr">
+      <a href="https://sites.google.com/view/washi-block-puzzle/ana-sayfa-home">Oyunun web sitesi</a><br>
+      <a href="https://sites.google.com/view/washi-block-puzzle/ana-sayfa-home/gizlilik-politikasi-tr">Gizlilik Politikası</a><br>
+      İletişim: <a href="mailto:teknik.destek.site@gmail.com">teknik.destek.site@gmail.com</a>
+    </p>
+  </div>
 </main>
+
+<footer>
+  <span data-lang="en">© DarKozyon Game · Independent mobile game developer</span>
+  <span data-lang="tr">© DarKozyon Game · Bağımsız mobil oyun geliştiricisi</span>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.body.className = lang;
+    document.documentElement.lang = lang;
+    document.getElementById("btn-en").classList.toggle("active", lang === "en");
+    document.getElementById("btn-tr").classList.toggle("active", lang === "tr");
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem("lang"); } catch (e) {}
+  setLang(saved || ((navigator.language || "").toLowerCase().startsWith("tr") ? "tr" : "en"));
+</script>
 </body>
 </html>
