@@ -193,6 +193,19 @@ section:last-of-type { border-bottom: none; }
 }
 .tag.soon { background: rgba(224, 51, 138, 0.12); color: #ff6fb0; border-color: rgba(224, 51, 138, 0.35); }
 .card-links { display: flex; gap: 16px; flex-wrap: wrap; font-size: 14px; font-weight: 600; }
+a.card-head { color: inherit; }
+a.card-head:hover { text-decoration: none; }
+
+.game-page { max-width: 1100px; margin: 0 auto; padding: 48px 24px 72px; }
+.game-top { display: flex; gap: 20px; align-items: center; }
+.game-top img { width: 88px; height: 88px; border-radius: 20px; }
+.game-top h1 { margin: 0 0 8px; font-size: 34px; }
+.game-lead { color: var(--silver); max-width: 720px; margin: 22px 0 28px; }
+.shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 0 0 28px; }
+.shot { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.shot img { width: 100%; height: auto; }
+.shot figcaption { padding: 12px 14px 14px; color: var(--muted); font-size: 14px; line-height: 1.4; }
+.game-links { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 600; }
 .icon { font-size: 26px; margin-bottom: 10px; color: var(--cyan); }
 
 /* About */
@@ -247,6 +260,8 @@ section:last-of-type { border-bottom: none; }
 
 @media (max-width: 860px) {
   .hero, .about, .contact { grid-template-columns: 1fr; }
+  .shots { grid-template-columns: repeat(2, 1fr); }
+  .game-top h1 { font-size: 28px; }
   .hero { padding-top: 32px; text-align: center; }
   .hero .buttons { justify-content: center; }
   .hero h1 { font-size: 34px; }
