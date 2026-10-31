@@ -217,6 +217,16 @@ section:last-of-type { border-bottom: none; }
 .form-status.ok { color: #5fd38d; }
 .form-status.error { color: #ff6f8a; }
 .note { font-size: 13px; color: var(--muted); }
+.social-row { margin: 16px 0 0; }
+.social-link {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: var(--cyan); font-weight: 700; text-decoration: none;
+}
+.social-link:hover { color: #fff; text-decoration: none; }
+.social-icon { width: 22px; height: 22px; flex-shrink: 0; }
+.footer-social { color: var(--silver); }
+.footer-social:hover { color: var(--cyan); }
+.footer-social .social-icon { width: 18px; height: 18px; }
 
 /* Footer */
 .site-footer { border-top: 1px solid var(--line); background: var(--bg-2); margin-top: 24px; }
