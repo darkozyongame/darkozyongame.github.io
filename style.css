@@ -177,6 +177,7 @@ section:last-of-type { border-bottom: none; }
 .card {
   background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 24px; transition: border-color 0.2s, transform 0.2s;
+  display: flex; flex-direction: column; height: 100%;
 }
 .card:hover { border-color: var(--blue); transform: translateY(-2px); }
 .card h3 { margin: 0 0 8px; font-size: 20px; }
@@ -192,7 +193,10 @@ section:last-of-type { border-bottom: none; }
   background: rgba(36, 119, 255, 0.15); color: var(--cyan); border: 1px solid rgba(63, 196, 255, 0.3);
 }
 .tag.soon { background: rgba(224, 51, 138, 0.12); color: #ff6fb0; border-color: rgba(224, 51, 138, 0.35); }
-.card-links { display: flex; gap: 16px; flex-wrap: wrap; font-size: 14px; font-weight: 600; }
+.card-links {
+  display: flex; gap: 16px; flex-wrap: wrap; font-size: 14px; font-weight: 600;
+  margin-top: auto; padding-top: 12px;
+}
 a.card-head { color: inherit; }
 a.card-head:hover { text-decoration: none; }
 
