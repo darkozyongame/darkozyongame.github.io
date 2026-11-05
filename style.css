@@ -206,6 +206,28 @@ a.card-head:hover { text-decoration: none; }
 .shot img { width: 100%; height: auto; }
 .shot figcaption { padding: 12px 14px 14px; color: var(--muted); font-size: 14px; line-height: 1.4; }
 .game-links { display: flex; gap: 16px; flex-wrap: wrap; font-weight: 600; }
+.store-row {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  margin: 4px 0 16px;
+}
+.store-panel {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  margin: 0 0 28px; padding: 22px 24px; border: 1px solid var(--line); border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(36, 119, 255, 0.12), rgba(224, 51, 138, 0.08));
+}
+.store-title { margin: 0 0 8px; font-size: 22px; }
+.store-copy { margin: 0 0 16px; color: var(--muted); max-width: 520px; }
+.store-btn { display: inline-flex; align-items: center; }
+.store-qr {
+  display: inline-flex; flex-direction: column; align-items: center; gap: 8px;
+  color: var(--silver); font-size: 12px; font-weight: 700; text-align: center;
+}
+.store-qr:hover { color: var(--cyan); text-decoration: none; }
+.store-qr img {
+  width: 88px; height: 88px; border-radius: 12px; background: #fff;
+  border: 1px solid var(--line); padding: 6px; box-sizing: border-box;
+}
+.store-qr-lg img { width: 148px; height: 148px; padding: 8px; }
 .icon { font-size: 26px; margin-bottom: 10px; color: var(--cyan); }
 
 /* About */
